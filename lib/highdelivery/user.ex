@@ -1,8 +1,11 @@
-defmodule Rockelivery. User do
+defmodule Highdelivery.User do
   use Ecto.Schema
   import Ecto.Changeset
 
   @primary_key {:id, :binary_id, autogenerate: true}
+
+  @requered_params [:age, :address, :cep, :cpf, :email, :password_hash, :name]
+
   schema "users" do
     field :age, :integer
     field :address, :string
@@ -13,5 +16,10 @@ defmodule Rockelivery. User do
     field :name, :string
 
     timestamps()
+  end
+
+  def changeset(params) do
+    %__MODULE__{}
+    |> cast(params, @requered_params)
   end
 end

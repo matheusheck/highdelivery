@@ -4,7 +4,7 @@ defmodule Highdelivery.Repo.Migrations.CreateUsersTable do
   def change do
     create table :users do
       add :address, :string
-      add :age, :intenger
+      add :age, :integer
       add :cep, :string
       add :cpf, :string
       add :email, :string

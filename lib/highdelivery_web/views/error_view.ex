@@ -18,7 +18,7 @@ defmodule HighdeliveryWeb.ErrorView do
     Phoenix.Controller.status_message_from_template(template)
   end
 
-  def render("400.json", %{result: %Changeset{} = changeset}) do
+  def render("error.json", %{result: %Changeset{} = changeset}) do
     %{message: translating_error(changeset)}
   end
 

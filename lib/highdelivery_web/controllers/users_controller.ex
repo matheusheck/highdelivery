@@ -13,4 +13,5 @@ defmodule HighdeliveryWeb.UsersController do
       |> render("create.json", user: user)
     end
   end
+
 end

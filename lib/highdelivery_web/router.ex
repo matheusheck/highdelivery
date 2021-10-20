@@ -15,9 +15,10 @@ defmodule HighdeliveryWeb.Router do
   end
 
   scope "/", HighdeliveryWeb do
-    pipe_through :browser
+    pipe_through :api
 
     get "/", WelcomeController, :index
+    resources "/users", UsersController, except: [:new, :edit]
   end
 
   # Other scopes may use custom stacks.

@@ -1,20 +1,15 @@
 defmodule Highdelivery.UserTest do
   use Highdelivery.DataCase, async: true
 
+  import Highdelivery.Factory
+
   alias Ecto.Changeset
   alias Highdelivery.User
 
+
   describe "changeset/2" do
     test "when all params are valid, returns a valid changeset" do
-      params = %{
-        age: 27,
-        address: "Rua das bananeiras, 15",
-        cep: "12345678",
-        cpf: "12345678901",
-        email: "Matheus@banana.com",
-        password: "123456",
-        name: "Matheus"
-      }
+      params = build(:user_params)
 
       response = User.changeset (params)
 
@@ -22,15 +17,7 @@ defmodule Highdelivery.UserTest do
     end
 
     test "when updating a value, returns a valid changeset" do
-      params = %{
-        age: 27,
-        address: "Rua das bananeiras, 15",
-        cep: "12345678",
-        cpf: "12345678901",
-        email: "Matheus@banana.com",
-        password: "123456",
-        name: "Matheus"
-      }
+      params = build(:user_params)
 
       update_params = %{name: "Matheus Heck"}
 

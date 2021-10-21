@@ -15,7 +15,7 @@ defmodule HighdeliveryWeb.UsersController do
   end
 
   def delete(conn, %{"id" => id}) do
-    with {:ok, %User{} = user} <- Highdelivery.delete_user(id) do
+    with {:ok, %User{}} <- Highdelivery.delete_user(id) do
       conn
       |> put_status(:no_content)
       |> text("")

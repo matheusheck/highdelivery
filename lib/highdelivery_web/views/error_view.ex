@@ -22,6 +22,10 @@ defmodule HighdeliveryWeb.ErrorView do
     %{message: translating_error(changeset)}
   end
 
+  def render("error.json", %{result: result}) do
+    %{message: result}
+  end
+
   defp translating_error(changeset) do
     traverse_errors(changeset, fn {msg, opts} ->
       Enum.reduce(opts, msg, fn {key, value}, acc ->

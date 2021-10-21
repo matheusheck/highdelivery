@@ -26,7 +26,7 @@ defmodule HighdeliveryWeb.UsersController do
     with {:ok, %User{} = user} <- Highdelivery.get_user_by_id(id) do
       conn
       |> put_status(:ok)
-      |> render("show.json", user: user)
+      |> render("user.json", user: user)
     end
   end
 

@@ -1,6 +1,8 @@
 defmodule HighdeliveryWeb.Router do
   use HighdeliveryWeb, :router
 
+  alias HighdeliveryWeb.Plugs.UUIDChecker
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -12,6 +14,7 @@ defmodule HighdeliveryWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug UUIDChecker
   end
 
   scope "/", HighdeliveryWeb do

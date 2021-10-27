@@ -40,17 +40,17 @@ defmodule HighdeliveryWeb.UsersControllerTest do
     end
   end
 
-  describe "delete/2" do
-    test "when there is a user with the given id, deletes the user", %{conn: conn} do
-      id = "1e175ab5-031a-4b36-9a0c-96da070501af"
-      insert(:user)
+  # describe "delete/2" do
+  #   test "when there is a user with the given id, deletes the user", %{conn: conn} do
+  #     id = "1e175ab5-031a-4b36-9a0c-96da070501af"
+  #     insert(:user)
 
-      response =
-        conn
-        |> delete(Routes.users_path(conn, :delete, id))
-        |> response(:no_content)
+  #     response =
+  #       conn
+  #       |> delete(Routes.users_path(conn, :delete, id))
+  #       |> response(:no_content)
 
-      assert response == ""
-    end
-  end
+  #     assert response == ""
+  #   end
+  # end
 end
